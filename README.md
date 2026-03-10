@@ -104,4 +104,6 @@ cd frontend/cipher-sql
 npm install
 npm run dev
 ```
+### Database Setup
+```text
 
