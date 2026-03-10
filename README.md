@@ -1,18 +1,13 @@
 # CipherSQLStudio
 
-CipherSQLStudio is a browser-based SQL learning platform where students can attempt pre-configured SQL assignments, inspect sample schema/data, execute queries in real time, and receive AI-generated hints without being shown the full solution.
+CipherSQLStudio is a browser-based SQL learning platform where users can practice SQL queries on predefined assignments.
 
-## Features
-
-- Assignment listing page
-- Assignment attempt page
-- Question and requirements panel
-- Sample schema and sample data viewer
-- SQL query execution against PostgreSQL
-- Query result table
-- Query validation for safer execution
-- AI hint generation
-- Responsive frontend using React + SCSS
+Users can:
+- view SQL assignment questions
+- inspect table schemas and sample data
+- write SQL queries in a browser editor
+- execute queries against PostgreSQL
+- receive AI-generated hints without revealing the full solution
 
 ## Tech Stack
 
@@ -132,4 +127,45 @@ CREATE TABLE orders (
     quantity INTEGER
 );
 ```
+
+## API Endpoints
+
+### Assignments
+```text
+GET /api/assignments
+GET /api/assignments/:id
+GET /api/assignments/:id/schema
+```
+
+### Query Execution
+```text
+POST /api/query/execute
+```
+
+### Hint Generation
+```text
+POST /api/hint
+```
+
+## Data Flow Expansion
+
+### Query Execution Flow 
+- User writes SQL query in the editor.
+- React stores the query in component state.
+- User clicks Execute Query.
+- Frontend sends POST /api/query/execute.
+- Backend validates the SQL query.
+- Backend executes the query on PostgreSQL.
+- PostgreSQL returns rows.
+- Backend sends the response to frontend.
+- React updates state and displays results in the results table.
+
+### Hint Generation Flow
+- User clicks Get Hint.
+- Frontend sends POST /api/hint with assignmentId and query.
+- Backend fetches assignment details from MongoDB.
+- Backend constructs a prompt for the AI model.
+- Backend calls the Grok API.
+- AI generates a hint.
+- Hint is returned to frontend and displayed to the user.
 
