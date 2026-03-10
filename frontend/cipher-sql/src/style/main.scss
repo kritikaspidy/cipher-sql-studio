@@ -1,0 +1,12 @@
+@use "./variables.scss";
+@use "./mixin.scss";
+@use "./global.scss";
+
+@use "./components/assignmentcard";
+@use "./components/questionpanel";
+@use "./components/schemaviewer";
+@use "./components/queryeditor";
+@use "./components/resultstable";
+
+@use "./pages/assignmentlist";
+@use "./pages/assignmentattempt";

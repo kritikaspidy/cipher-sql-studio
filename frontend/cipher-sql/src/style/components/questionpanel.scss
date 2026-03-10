@@ -1,0 +1,25 @@
+@use "../variables" as *;
+@use "../mixin" as *;
+
+.question-panel {
+  @include panel;
+
+  &__description,
+  &__question {
+    color: $color-muted;
+  }
+
+  &__difficulty {
+    font-weight: 600;
+    margin-bottom: $spacing-md;
+  }
+
+  &__heading {
+    margin-top: $spacing-md;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__requirements {
+    padding-left: 20px;
+  }
+}

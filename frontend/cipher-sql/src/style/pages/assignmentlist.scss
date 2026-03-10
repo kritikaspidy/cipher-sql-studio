@@ -1,0 +1,32 @@
+@use "../variables.scss" as *;
+@use "../mixin.scss" as *;
+
+.assignment-list-page {
+  padding: $spacing-lg $spacing-md;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__grid {
+    display: grid;
+    gap: $spacing-md;
+  }
+
+  @include respond-md {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include respond-lg {
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

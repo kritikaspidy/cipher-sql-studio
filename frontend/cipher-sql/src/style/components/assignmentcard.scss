@@ -1,0 +1,33 @@
+@use "../variables.scss" as *;
+@use "../mixin.scss" as *;
+
+.assignment-card {
+  @include panel;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  justify-content: space-between;
+
+  &__title {
+    margin-bottom: $spacing-xs;
+  }
+
+  &__description {
+    color: $color-muted;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__difficulty {
+    font-weight: 600;
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: $radius-md;
+    background: $color-primary;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+  }
+}

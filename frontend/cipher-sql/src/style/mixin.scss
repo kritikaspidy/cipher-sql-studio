@@ -1,0 +1,27 @@
+@use "./variables.scss" as *;
+
+@mixin respond-sm {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin respond-md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin respond-lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin panel {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  padding: $spacing-md;
+}

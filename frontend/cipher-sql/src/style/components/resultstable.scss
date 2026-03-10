@@ -1,0 +1,29 @@
+@use "../variables" as *;
+
+.results-table {
+  &__wrapper {
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+  }
+
+  th,
+  td {
+    border: 1px solid $color-border;
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  th {
+    background: #f3f4f6;
+  }
+
+  &__empty {
+    color: $color-muted;
+  }
+}

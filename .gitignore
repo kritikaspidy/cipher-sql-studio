@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+**/node_modules/
+
+# environment variables
+.env
+**/.env
+
+# build output
+dist/
+build/
+
+# logs
+npm-debug.log*
+
+# macOS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

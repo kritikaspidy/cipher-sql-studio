@@ -1,0 +1,29 @@
+@use "../variables" as *;
+@use "../mixin" as *;
+
+.schema-viewer {
+  @include panel;
+
+  &__title {
+    margin-bottom: $spacing-md;
+  }
+
+  &__table-card {
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+
+  &__columns {
+    color: $color-muted;
+  }
+
+  &__sample {
+    overflow-x: auto;
+    background: #f3f4f6;
+    padding: $spacing-sm;
+    border-radius: $radius-md;
+    font-size: 14px;
+  }
+}
