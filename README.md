@@ -18,16 +18,18 @@ CipherSQLStudio is a browser-based SQL learning platform where students can atte
 
 ### Frontend
 - React
-- React Router
 - SCSS
-- Axios
 - Monaco Editor
 
 ### Backend
 - Node.js
 - Express.js
-- MongoDB with Mongoose
-- PostgreSQL with pg
+
+### Database
+- MongoDB (assignment data)
+- PostgreSQL (SQL sandbox)
+
+### AI
 - Grok API for hints
 
 ## Why these technologies were chosen
@@ -62,3 +64,44 @@ cipher-sql-studio/
     .env.example
     package.json
   README.md
+```
+
+## Environmental Variables
+### Backend (.env)
+```text
+PORT=8000
+MONGODB_URI=
+PG_HOST=localhost
+PG_PORT=5432
+PG_USER=postgres
+PG_PASSWORD=
+PG_DATABASE=ciphersqlstudio
+GROK_API_KEY=
+```
+
+## Installation steps
+
+### clone the repository
+```text
+git clone https://github.com/yourusername/cipher-sql-studio.git
+cd cipher-sql-studio
+```
+
+### Setup Backend
+```text
+cd backend
+npm install
+```
+create .env file
+#### start server
+```text
+npm run dev
+```
+
+### Setup Frontend
+```text
+cd frontend/cipher-sql
+npm install
+npm run dev
+```
+
