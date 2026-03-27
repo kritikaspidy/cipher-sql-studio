@@ -31,7 +31,7 @@ function AssignmentAttemptPage() {
           getAssignmentSchema(id),
         ]);
 
-        const fetchedAssignment = assignmentRes.data.assignment;
+        const fetchedAssignment = assignmentRes.data;
         setAssignment(fetchedAssignment);
         setSchemaData(schemaRes.data.tables || []);
 
