@@ -9,7 +9,7 @@ import SchemaViewer from "../components/SchemaViewer";
 import { getHint } from "../api/hintapi";
 
 function AssignmentAttemptPage() {
-  const { assignmentId } = useParams();
+  const { id } = useParams();
 
   const [assignment, setAssignment] = useState(null);
   const [schemaData, setSchemaData] = useState([]);
