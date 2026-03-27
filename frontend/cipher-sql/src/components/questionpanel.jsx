@@ -3,21 +3,38 @@ function QuestionPanel({ assignment }) {
 
   return (
     <section className="question-panel">
-      <h1 className="question-panel__title">{assignment.title}</h1>
-      <p className="question-panel__description">{assignment.description}</p>
-      <p className="question-panel__difficulty">
-        Difficulty: {assignment.difficulty}
-      </p>
+      <div className="question-panel__hero">
+        <div className="question-panel__hero-text">
+          <p className="question-panel__eyebrow">Assignment</p>
+          <h1 className="question-panel__title">{assignment.title}</h1>
+          <p className="question-panel__description">{assignment.description}</p>
+        </div>
 
-      <h2 className="question-panel__heading">Question</h2>
-      <p className="question-panel__question">{assignment.question}</p>
+        <span
+          className={`question-panel__badge question-panel__badge--${(
+            assignment.difficulty || "easy"
+          ).toLowerCase()}`}
+        >
+          {assignment.difficulty}
+        </span>
+      </div>
 
-      <h2 className="question-panel__heading">Requirements</h2>
-      <ul className="question-panel__requirements">
-        {assignment.requirements?.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+      <div className="question-panel__section">
+        <h2 className="question-panel__heading">Question</h2>
+        <p className="question-panel__question">{assignment.question}</p>
+      </div>
+
+      <div className="question-panel__section">
+        <h2 className="question-panel__heading">Requirements</h2>
+        <ul className="question-panel__requirements">
+          {assignment.requirements?.map((item, index) => (
+            <li key={index} className="question-panel__requirement-item">
+              <span className="question-panel__bullet">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
