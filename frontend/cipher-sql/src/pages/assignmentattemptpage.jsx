@@ -26,11 +26,15 @@ function AssignmentAttemptPage() {
   useEffect(() => {
     const fetchAssignmentData = async () => {
       try {
-        const [assignmentRes, schemaRes] = await Promise.all([
-          getAssignmentById(id),
-          getAssignmentSchema(id),
-        ]);
+        const assignmentRes = await getAssignmentById(id);
 
+let schemaRes = { data: { tables: [] } };
+
+try {
+  schemaRes = await getAssignmentSchema(id);
+} catch (err) {
+  console.log("Schema failed, ignoring...");
+}
         const fetchedAssignment = assignmentRes.data;
         setAssignment(fetchedAssignment);
         setSchemaData(schemaRes.data.tables || []);
