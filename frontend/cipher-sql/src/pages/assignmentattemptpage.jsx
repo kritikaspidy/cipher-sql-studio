@@ -35,7 +35,7 @@ try {
 } catch (err) {
   console.log("Schema failed, ignoring...");
 }
-        const fetchedAssignment = assignmentRes.data;
+        const fetchedAssignment = assignmentRes.data.assignment;
         setAssignment(fetchedAssignment);
         setSchemaData(schemaRes.data.tables || []);
 
