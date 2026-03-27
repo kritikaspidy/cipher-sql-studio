@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AssignmentListPage from "./pages/assignmentlistpage";
-import AssignmentAttemptPage from "./pages/AssignmentAttemptPage";
+import AssignmentAttemptPage from "./pages/assignmentattemptpage";
 import "./style/main.scss";
 
 function App() {
